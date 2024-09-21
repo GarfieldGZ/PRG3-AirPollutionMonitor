@@ -7,7 +7,7 @@ The group members are:
 - Jacob Taylor
 - Elliott Wong
 - Jikai Wu
-- Garfield Zhang
+- Shengqi Garfield Zhang
 
 Air pollution is a significant danger to people with asthma, and living in an area that has low pollution can change their life experience. 
 
