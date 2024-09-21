@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LiveAirPollution"
+    android:id="@+id/live_air_pollution_page">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="97dp"
+        android:layout_marginTop="90dp"
+        android:hint="@string/select">
+
+        <AutoCompleteTextView
+            android:id="@+id/auto_complete_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:inputType="none" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <TextView
+        android:id="@+id/location_live_viewer_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="50dp"
+        android:text="@string/location_live_viewer_title"
+        android:textSize="25sp"
+        android:fontFamily="@font/roboto_bold"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/air_pollution_rating_viewer_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="180dp"
+        android:textSize="15dp"
+        android:text="" />
+
+    <Button
+        android:id="@+id/live_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:drawableLeft="@drawable/ic_more_info"
+        android:text="More Information"
+        android:textSize="12dp"
+        android:textAllCaps="false"
+        android:fontFamily="@font/roboto_bold"
+        android:textColor="@color/black" />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

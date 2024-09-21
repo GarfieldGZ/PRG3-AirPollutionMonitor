@@ -1,0 +1,218 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+android:fillViewport="true">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AirQualityPlot"
+    android:id="@+id/air_quality_plot_page">
+
+        <TextView
+            android:id="@+id/graphs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="40dp"
+            android:text="London Areas"
+            android:textSize="50sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/roboto_bold"/>
+
+        <TextView
+            android:id="@+id/list_of_areas_unsorted"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="130dp"
+            android:textSize="15dp"
+            android:text="Shown here are graphs that demonstrate
+              \nhow the air quality of different areas within
+              \nLondon has changed between 2016 and
+              \n2020, sorted by best to worst" />
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:src="@drawable/image_001" />.
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="300dp"
+            android:src="@drawable/image_002" />.
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="600dp"
+            android:src="@drawable/image_003" />.
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="900dp"
+            android:src="@drawable/image_004" />.
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1200dp"
+            android:src="@drawable/image_005" />.
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1200dp"
+            android:src="@drawable/image_006" />.
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1200dp"
+            android:src="@drawable/image_007" />.
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1200dp"
+            android:src="@drawable/image_008" />.
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1200dp"
+            android:src="@drawable/image_009" />.
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1200dp"
+            android:src="@drawable/image_010" />.
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1500dp"
+            android:src="@drawable/image_011" />.
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1200dp"
+            android:src="@drawable/image_012" />.
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1800dp"
+            android:src="@drawable/image_013" />.
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2100dp"
+            android:src="@drawable/image_014" />.
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2400dp"
+            android:src="@drawable/image_015" />.
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2700dp"
+            android:src="@drawable/image_016" />.
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3000dp"
+            android:src="@drawable/image_017" />.
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3300dp"
+            android:src="@drawable/image_018" />.
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3600dp"
+            android:src="@drawable/image_019" />.
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3900dp"
+            android:src="@drawable/image_020" />.
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4200dp"
+            android:src="@drawable/image_021" />.
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4500dp"
+            android:src="@drawable/image_022" />.
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4800dp"
+            android:src="@drawable/image_022" />.
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5100dp"
+            android:src="@drawable/image_023" />.
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5400dp"
+            android:src="@drawable/image_024" />.
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5700dp"
+            android:src="@drawable/image_025" />.
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6000dp"
+            android:src="@drawable/image_026" />.
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6300dp"
+            android:src="@drawable/image_027" />.
+
+        <Button
+            android:id="@+id/plot_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:drawableLeft="@drawable/ic_more_info"
+            android:text="More Information"
+            android:textSize="12dp"
+            android:textAllCaps="false"
+            android:fontFamily="@font/roboto_bold"
+            android:textColor="@color/black" />
+
+</RelativeLayout>
+</ScrollView>

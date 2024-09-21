@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AirQuality"
+    android:id="@+id/air_quality_menu">
+
+    <TextView
+        android:id="@+id/air_quality_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/air_quality_title"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/roboto_bold"/>
+
+    <Button
+        android:id="@+id/live_london_pollution_levels"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="150dp"
+        android:backgroundTint="@color/malibu_blue1"
+        android:text="@string/live_air_pollution_title"
+        android:textColor="@android:color/background_light"
+        android:textSize="16sp"
+        android:fontFamily="@font/roboto_bold"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/recommended_places_to_live"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="250dp"
+        android:backgroundTint="@color/pacific_blue2"
+        android:text="@string/air_quality_plot_title"
+        android:textSize="16sp"
+        android:fontFamily="@font/roboto_bold"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/news_updates"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="350dp"
+        android:backgroundTint="@color/cobalt_blue3"
+        android:text="@string/news_updates_title"
+        android:textSize="16sp"
+        android:fontFamily="@font/roboto_bold"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/list_of_areas"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="450dp"
+        android:backgroundTint="@color/prussian_blue4"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/sorted_areas_title"
+        android:textColor="@android:color/background_light"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/list_of_bad_areas"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="550dp"
+        android:layout_marginEnd="74dp"
+        android:backgroundTint="@color/black"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/areas_to_avoid_title"
+        android:textColor="@android:color/background_light"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+
+
+</RelativeLayout>

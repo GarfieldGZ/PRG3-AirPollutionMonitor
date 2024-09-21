@@ -1,0 +1,369 @@
+@startuml
+
+left to right direction
+
+class com.example.PRG3AirPollutionMonitor.PlotInfo {
+~ TextView plot_description_text
+~ Button plot_info_to_index_button
+# void onCreate(Bundle)
+}
+class com.example.PRG3AirPollutionMonitor.BuildConfig {
++ {static} boolean DEBUG
++ {static} String APPLICATION_ID
++ {static} String BUILD_TYPE
++ {static} int VERSION_CODE
++ {static} String VERSION_NAME
+}
+class com.example.PRG3AirPollutionMonitor.CALDBHelper {
++ {static} String DATABASE_NAME
++ {static} String TABLE_NAME
++ {static} String COL_0
++ {static} String COL_1
++ {static} String COL_2
++ {static} String COL_3
++ void onCreate(SQLiteDatabase)
++ void onUpgrade(SQLiteDatabase,int,int)
++ boolean insertData(String,LocalDate,LocalTime)
++ Cursor accessData()
+}
+class com.example.PRG3AirPollutionMonitor.getAQI {
+- String x
+- String data
++ String[] AQIOutput()
+}
+class com.example.PRG3AirPollutionMonitor.CALEventAdapt {
++ View getView(int,View,ViewGroup)
+}
+class com.example.PRG3AirPollutionMonitor.InhalerMenu {
+~ Button check_calendar_button
+~ Button check_prescription_details_button
+~ TextView inhaler_menu_text_view
+# void onCreate(Bundle)
+}
+class com.example.PRG3AirPollutionMonitor.NewsUpdates {
+- ListView listView
+- NewsListAdapter adapter
+- List<News> newsList
+- WebView webView
+- float startY
+- float currentY
+- Button newsButton
+- {static} int MIN_HEIGHT_DP
+- {static} int MAX_HEIGHT_DP
+- int MIN_HEIGHT_PX
+- int MAX_HEIGHT_PX
+# void onCreate(Bundle)
++ boolean onTouch(View,MotionEvent)
++ boolean onTouchEvent(MotionEvent)
+- void changeLayoutHeight(float)
+}
+class com.example.PRG3AirPollutionMonitor.NewsUpdates.FetchNews {
+# Void doInBackground(Void)
+# void onPostExecute(Void)
+}
+class com.example.PRG3AirPollutionMonitor.LiveAirPollution {
+~ TextView location_live_viewer
+~ TextView air_pollution_rating_viewer
+~ String x
+~ Button live_info_button
+~ String[] items
+~ AutoCompleteTextView autoCompleteTxt
+~ ArrayAdapter<String> adapterItems
+# void onCreate(Bundle)
+}
+class com.example.PRG3AirPollutionMonitor.MainMenu {
+~ TextView welcomeTitle
+~ Button airQualityButton
+~ Button emergencyButton
+~ Button inhalerButton
+~ Button countdown_button
++ {static} long start_time_ms
+- {static} long time_left_ms
+- {static} long end_time
+- {static} boolean timer_running
+- String eventName
+- LocalTime time
+- LocalDate date
+~ String prescription_expiry_date
+~ int prescription_uses
+- {static} Context context
+~ CALDBHelper XCALDBHelper
+~ LocalDate expiryDate
++ void onCreate(Bundle)
+- void startTimer()
+- void resetTimer()
+- void updatetext()
++ {static} void saveVar(Context)
+# void onStop()
+# void onStart()
++ void load_prescription_dosage_interval()
++ void load_prescription_detail()
++ void update_prescription_use()
++ void prescription_use_notification()
++ void prescription_expiry_notification()
++ void inhaler_use_notify()
++ void inhaler_use_notify_urgent()
++ void inhaler_expiry_notify()
++ void inhaler_expiry_notify_urgent()
++ void createNotificationChannel()
+}
+class com.example.PRG3AirPollutionMonitor.OverdosePopup {
+# void onCreate(Bundle)
+}
+class com.example.PRG3AirPollutionMonitor.BadAreas {
+~ String x
+~ HashMap<String,String> values
+~ TextView sorted_areas_text_bad
+~ {static} TextView list_of_areas_unsorted_text_2
+~ {static} TextView numbers_of_areas_text_2
+~ {static} TextView bad_areas_progress_text
+~ {static} String all_areas
+~ {static} String all_numbers
+~ Button bad_areas_info_button
+~ String[] items
+# void onCreate(Bundle)
+}
+class com.example.PRG3AirPollutionMonitor.PrescriptionDetails {
+- TextView remaining_inhaler_uses_text
+- TextView remaining_inhaler_uses_display
+- TextView prescription_expiry_date_text
+- TextView prescription_expiry_date_display
+- TextView new_information_text
+- EditText new_prescription_number_of_uses
+- EditText new_prescription_expiry_date
+- EditText new_prescription_dosage_interval
+- String dosage_interval
+~ DateTimeFormatter dateFormatter
+~ DateTimeFormatter[] inputFormatters
+~ LocalDate dateNow
+- Button save_button
++ {static} String SHARED_PREFS
++ {static} String TEXT
++ {static} String TEXT2
++ {static} String TEXT3
+- String text
+- String text2
+- String text3
+# void onCreate(Bundle)
++ void saveData()
++ void loadData()
++ void updateViews()
+# void onStop()
+}
+class com.example.PRG3AirPollutionMonitor.IndexInfo {
+~ TextView colour_text
+# void onCreate(Bundle)
+}
+class com.example.PRG3AirPollutionMonitor.CALCalendarUtility {
++ {static} LocalDate selectedDate
++ {static} String formatDate(LocalDate)
++ {static} String formatTime(LocalTime)
++ {static} String monthYearFromDate(LocalDate)
++ {static} ArrayList<LocalDate> daysInMonthArray(LocalDate)
++ {static} ArrayList<LocalDate> daysWeekArray(LocalDate)
+}
+class com.example.PRG3AirPollutionMonitor.PrescriptionDetailsTest {
++ void setUp()
++ void test_numOfUsesInputSaved()
++ void test_numOfUsesInputDisplayed()
++ void test_expiryDateInputSaved()
++ void test_expiryDateInputDisplayed()
++ void test_dosageIntervalInputSaved()
++ void test_invalidInput_zeroNumOfUses()
++ void test_invalidInput_pastExpiryDate()
++ void test_invalidInput_invalidDayExpiryDate()
++ void test_invalidInput_invalidMonthExpiryDate()
++ void test_invalidInput_negativeDosageInterval()
++ void test_invalidInput_zeroDosageInterval()
+}
+class com.example.PRG3AirPollutionMonitor.CALCalendarView {
+- ArrayList<LocalDate> days
++ View parentView
++ TextView dayOfMonth
+- CALCalendarAdapt.onItemClickListener listener
++ void onClick(View)
+}
+class com.example.PRG3AirPollutionMonitor.AirQuality {
+~ Button recommended_places_to_live_button
+~ TextView air_quality_text_view
+# void onCreate(Bundle)
+}
+class com.example.PRG3AirPollutionMonitor.CALWeekView {
+- TextView monthYearText
+- RecyclerView calendarRecView
+- ListView eventListView
+~ CALDBHelper XCALDBHelper
+# void onCreate(Bundle)
+- void initWidgets()
+- void setWeekView()
++ void previousWeek(View)
++ void nextWeek(View)
++ void onItemClick(int,LocalDate)
+# void onResume()
+- void setEventAdapter()
++ void newCALEvent(View)
+}
+class com.example.PRG3AirPollutionMonitor.SortedAreas {
+~ String x
+~ HashMap<String,String> values
+~ {static} TextView list_of_areas_unsorted_text
+~ {static} TextView numbers_of_areas_text
+~ {static} TextView sorted_areas_progress_text
+~ {static} String all_areas
+~ {static} String all_numbers
+~ Button sorted_areas_info_button
+~ String[] items
+# void onCreate(Bundle)
+}
+class com.example.PRG3AirPollutionMonitor.AirQualityTest {
++ void test_isAirQualityMenuInView()
++ void test_visibility_titleAndButtons()
++ void test_isTitleAndButtonTextDisplayed()
++ void test_livePollutionButton_toLiveAirPollutionPage()
++ void test_airQualityPlotButton_toAirQualityPlotPage()
++ void test_newsUpdatesButton_toNewsUpdatesPage()
+}
+class com.example.PRG3AirPollutionMonitor.AirQualityPlot {
+~ Button plot_info_button
+# void onCreate(Bundle)
+}
+class com.example.PRG3AirPollutionMonitor.CALEvent {
++ {static} ArrayList<CALEvent> eventsList
+- String name
+- LocalDate date
+- LocalTime time
++ {static} ArrayList<CALEvent> eventsDate(LocalDate)
++ String getName()
++ void setName(String)
++ LocalDate getDate()
++ void setDate(LocalDate)
++ LocalTime getTime()
++ void setTime(LocalTime)
+}
+class com.example.PRG3AirPollutionMonitor.NewsListAdapter {
+- Context context
+- List<News> newsList
++ int getCount()
++ Object getItem(int)
++ long getItemId(int)
++ View getView(int,View,ViewGroup)
+}
+class com.example.PRG3AirPollutionMonitor.InhalerMenuTest {
++ void test_isInhalerMenuInView()
++ void test_visibility_titleAndButtons()
++ void test_isTitleAndButtonTextDisplayed()
++ void test_calendarButton_toUsageCalendarPage()
++ void test_prescriptionButton_toPrescriptionDetailsPage()
+}
+class com.example.PRG3AirPollutionMonitor.EmergencyTest {
++ void test_isEmergencyInfoInView()
++ void test_visibility_titleAndTextViews()
++ void test_visibility_cardViews()
+}
+class com.example.PRG3AirPollutionMonitor.PollutionPopup {
+~ {static} TextView areas_to_avoid_start_text
+~ {static} String x
+~ {static} String all_areas2
+- View popup
+- LayoutInflater nlayoutInflater
+~ String[] items
+~ HashMap<String,String> values
+# void onCreate(Bundle)
+}
+class com.example.PRG3AirPollutionMonitor.CALCalendarAdapt {
+- ArrayList<LocalDate> days
+- onItemClickListener listener
++ CALCalendarView onCreateViewHolder(ViewGroup,int)
++ void onBindViewHolder(CALCalendarView,int)
++ int getItemCount()
+}
+interface com.example.PRG3AirPollutionMonitor.CALCalendarAdapt.onItemClickListener {
+~ void onItemClick(int,LocalDate)
+}
+class com.example.PRG3AirPollutionMonitor.CALEditEvent {
+- EditText eventName
+- TextView eventDate
+- LocalTime time
+~ CALDBHelper XCALDBHelper
+# void onCreate(Bundle)
+- void initWidgets()
++ void saveEvent(View)
+}
+class com.example.PRG3AirPollutionMonitor.MainMenuTest {
++ void test_isMainMenuInView()
++ void test_visibility_titleAndButtons()
++ void test_isTitleAndButtonTextDisplayed()
++ void test_airQualityButton_toAirQualityMenu()
++ void test_emergencyButton_toEmergencyInfoPage()
++ void test_inhalerUseButton_toInhalerUseMenu()
+}
+class com.example.PRG3AirPollutionMonitor.UsageCalendar {
+- TextView monthYearText
+- RecyclerView calendarRecView
+# void onCreate(Bundle)
+- void initWidgets()
+- void setMonthView()
++ void previousMonth(View)
++ void nextMonth(View)
++ void onItemClick(int,LocalDate)
++ void goToWeekView(View)
+}
+class com.example.PRG3AirPollutionMonitor.News {
+- String title
+- String description
+- String url
++ String getTitle()
++ String getDescription()
++ String getUrl()
+}
+class com.example.PRG3AirPollutionMonitor.Emergency {
+~ TextView emergency_information_text
+~ TextView whatToDo_title
+~ TextView whatToDo_text
+~ TextView whatToDo_info
+~ TextView call_999_title
+~ TextView call_999_text
+~ TextView AE_info
+~ TextView call_111_title
+~ TextView call_111_text
+~ TextView NHS111_info
+~ TextView urgentSymptoms_title
+~ TextView urgentSymptoms_text
+~ TextView urgentSymptoms_info
+~ TextView routine_title
+~ TextView routine_text
+~ TextView reference_text
+# void onCreate(Bundle)
+}
+
+
+androidx.appcompat.app.AppCompatActivity <|-- com.example.PRG3AirPollutionMonitor.PlotInfo
+android.database.sqlite.SQLiteOpenHelper <|-- com.example.PRG3AirPollutionMonitor.CALDBHelper
+android.widget.ArrayAdapter <|-- com.example.PRG3AirPollutionMonitor.CALEventAdapt
+androidx.appcompat.app.AppCompatActivity <|-- com.example.PRG3AirPollutionMonitor.InhalerMenu
+com.example.PRG3AirPollutionMonitor.OnTouchListener <|.. com.example.PRG3AirPollutionMonitor.NewsUpdates
+androidx.appcompat.app.AppCompatActivity <|-- com.example.PRG3AirPollutionMonitor.NewsUpdates
+com.example.PRG3AirPollutionMonitor.NewsUpdates +.. com.example.PRG3AirPollutionMonitor.NewsUpdates.FetchNews
+com.example.PRG3AirPollutionMonitor.AsyncTask <|-- com.example.PRG3AirPollutionMonitor.NewsUpdates.FetchNews
+androidx.appcompat.app.AppCompatActivity <|-- com.example.PRG3AirPollutionMonitor.LiveAirPollution
+androidx.appcompat.app.AppCompatActivity <|-- com.example.PRG3AirPollutionMonitor.MainMenu
+android.app.Activity <|-- com.example.PRG3AirPollutionMonitor.OverdosePopup
+androidx.appcompat.app.AppCompatActivity <|-- com.example.PRG3AirPollutionMonitor.BadAreas
+androidx.appcompat.app.AppCompatActivity <|-- com.example.PRG3AirPollutionMonitor.PrescriptionDetails
+androidx.appcompat.app.AppCompatActivity <|-- com.example.PRG3AirPollutionMonitor.IndexInfo
+com.example.PRG3AirPollutionMonitor.OnClickListener <|.. com.example.PRG3AirPollutionMonitor.CALCalendarView
+com.example.PRG3AirPollutionMonitor.ViewHolder <|-- com.example.PRG3AirPollutionMonitor.CALCalendarView
+androidx.appcompat.app.AppCompatActivity <|-- com.example.PRG3AirPollutionMonitor.AirQuality
+com.example.PRG3AirPollutionMonitor.onItemClickListener <|.. com.example.PRG3AirPollutionMonitor.CALWeekView
+androidx.appcompat.app.AppCompatActivity <|-- com.example.PRG3AirPollutionMonitor.CALWeekView
+androidx.appcompat.app.AppCompatActivity <|-- com.example.PRG3AirPollutionMonitor.SortedAreas
+androidx.appcompat.app.AppCompatActivity <|-- com.example.PRG3AirPollutionMonitor.AirQualityPlot
+android.widget.BaseAdapter <|-- com.example.PRG3AirPollutionMonitor.NewsListAdapter
+android.app.Activity <|-- com.example.PRG3AirPollutionMonitor.PollutionPopup
+com.example.PRG3AirPollutionMonitor.Adapter <|-- com.example.PRG3AirPollutionMonitor.CALCalendarAdapt
+com.example.PRG3AirPollutionMonitor.CALCalendarAdapt +.. com.example.PRG3AirPollutionMonitor.CALCalendarAdapt.onItemClickListener
+androidx.appcompat.app.AppCompatActivity <|-- com.example.PRG3AirPollutionMonitor.CALEditEvent
+com.example.PRG3AirPollutionMonitor.onItemClickListener <|.. com.example.PRG3AirPollutionMonitor.UsageCalendar
+androidx.appcompat.app.AppCompatActivity <|-- com.example.PRG3AirPollutionMonitor.UsageCalendar
+androidx.appcompat.app.AppCompatActivity <|-- com.example.PRG3AirPollutionMonitor.Emergency
+@enduml
